@@ -1,4 +1,4 @@
-# Troubleshooting Windows: KIOSK restriction
+# Troubleshooting Windows: KIOSK restrictions
 
 <b>Error message:</b>
 
