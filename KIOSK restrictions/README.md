@@ -4,10 +4,17 @@
 
 <img src="img/error.png" width=100% height=100%>
 
+<b>Notes:</b>
+
+* Error apears because KIOSK user is trying to execute apllications that KIOSK configuration is blocking
+* Understanding CTRL+ALT+DELETE
+
+# Launch CMD on sign-in
+
 <b>Launch cmd on sign-in:</b>
 
 ```batch
-REG ADD HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v cmd /t REG_SZ /d C:\Windows\System32\cmd.exe
+REG ADD HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v cmd /t REG_SZ /d C:\Windows\System32\cmd.exe /f
 ```
 
 <b>Remove cmd on sign-in:</b>
@@ -28,6 +35,8 @@ REG ADD HKLM\kiosk\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\R
 REG DELETE HKLM\kiosk\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\RestrictRun /v AssignedAccess_4 /f
 ```
 
+# Allow applications to run
+
 <b>Disable RestrictRun:</b>
 
 ```batch
@@ -39,6 +48,8 @@ REG ADD HKLM\kiosk\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /
 ```batch
 REG ADD HKLM\kiosk\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v RestrictRun /t REG_DWORD /d 1 /f
 ```
+
+# Load and Unload user registry
 
 <b>Load kioskUser0 registry:</b>
 
